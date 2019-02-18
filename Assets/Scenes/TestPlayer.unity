@@ -180,6 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 101
   jumpKey: 32
+  acceleration: 0.3
+  maxMoveSpeed: 3
   OnInteractKeyPressed:
     m_PersistentCalls:
       m_Calls: []

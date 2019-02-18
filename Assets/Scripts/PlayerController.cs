@@ -12,9 +12,12 @@ public class PlayerController : MonoBehaviour
 
     public KeyCode interactKey;
     public KeyCode jumpKey;
+    public float acceleration;
+    public float maxMoveSpeed;
 
     private float m_HorizontalAxis;
     private float m_VerticalAxis;
+    private float m_MoveSpeed;
 
     public KeyPressEvent OnInteractKeyPressed;
     public KeyPressEvent OnJumpKeyPressed;
@@ -37,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        print(m_Rigidbody2D.velocity);
+
         if (Input.GetKeyDown(interactKey))
         {
             OnInteractKeyPressed.Invoke(this);
@@ -47,14 +52,23 @@ public class PlayerController : MonoBehaviour
             OnJumpKeyPressed.Invoke(this);
         }
 
-        m_HorizontalAxis = Input.GetAxis("Horizontal");
-        m_VerticalAxis = Input.GetAxis("Vertical");
-        HorizontalMove();
+        m_HorizontalAxis = Input.GetAxisRaw("Horizontal");
+        m_VerticalAxis = Input.GetAxisRaw("Vertical");
+        m_MoveSpeed = CalculateMoveSpeed();
+        Move();
     }
 
-    private void HorizontalMove()
+    private float CalculateMoveSpeed()
     {
-        m_Rigidbody2D.velocity = (Vector3.right * m_HorizontalAxis) + (Vector3.up * m_VerticalAxis);
+        float newSpeed = m_MoveSpeed + acceleration;
+        newSpeed *= Mathf.Max(Math.Abs(m_HorizontalAxis), Math.Abs(m_VerticalAxis));
+        return Mathf.Clamp(newSpeed, 0, maxMoveSpeed);
+    }
+
+    private void Move()
+    {
+        m_Rigidbody2D.velocity = (Vector3.right * m_HorizontalAxis * m_MoveSpeed) +
+                                 (Vector3.up * m_VerticalAxis * (m_MoveSpeed / 2));
     }
 
 
