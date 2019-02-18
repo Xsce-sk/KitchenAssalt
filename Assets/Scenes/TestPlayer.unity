@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 257200493}
   - component: {fileID: 257200495}
+  - component: {fileID: 257200496}
   - component: {fileID: 257200494}
   m_Layer: 0
   m_Name: Player
@@ -184,7 +185,18 @@ MonoBehaviour:
   maxMoveSpeed: 3
   OnInteractKeyPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 257200496}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnJumpKeyPressed:
@@ -192,6 +204,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &257200496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257200492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49766d0e8c9ad534cac04a98328f4e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 7716524381722543792, guid: aafe7c5f6654545408ed00d9f054949d,
+    type: 3}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &340949553
 GameObject:
   m_ObjectHideFlags: 0

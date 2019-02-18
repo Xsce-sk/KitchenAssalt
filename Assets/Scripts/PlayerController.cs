@@ -25,14 +25,9 @@ public class PlayerController : MonoBehaviour
     protected Transform m_Transform;
     protected Rigidbody2D m_Rigidbody2D;
 
-    private void Awake()
-    {
-        
-    }
-
     private void Start()
     {
-        m_Transform = transform;
+        m_Transform = this.gameObject.transform;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
         m_Rigidbody2D.gravityScale = 0;
@@ -40,8 +35,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        print(m_Rigidbody2D.velocity);
-
         if (Input.GetKeyDown(interactKey))
         {
             OnInteractKeyPressed.Invoke(this);
