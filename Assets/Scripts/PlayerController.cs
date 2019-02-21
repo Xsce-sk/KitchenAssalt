@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode jumpKey;
     public float acceleration;
     public float maxMoveSpeed;
+    public float verticalDampener;
 
     private float m_HorizontalAxis;
     private float m_VerticalAxis;
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         m_VerticalAxis = Input.GetAxisRaw("Vertical");
         m_MoveSpeed = CalculateMoveSpeed();
         Move();
+        UpdateDirection();
     }
 
     private float CalculateMoveSpeed()
@@ -61,8 +63,17 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         m_Rigidbody2D.velocity = (Vector3.right * m_HorizontalAxis * m_MoveSpeed) +
-                                 (Vector3.up * m_VerticalAxis * (m_MoveSpeed / 2));
+                                 (Vector3.up * m_VerticalAxis * (m_MoveSpeed * verticalDampener));
     }
 
-
+    private void UpdateDirection()
+    {
+        if (m_HorizontalAxis != 0)
+        {
+            Vector3 currentScale = m_Transform.localScale;
+            m_Transform.localScale = new Vector3(m_HorizontalAxis,
+                                                 currentScale.y,
+                                                 currentScale.z);
+        }
+    }
 }

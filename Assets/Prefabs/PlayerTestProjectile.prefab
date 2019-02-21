@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  destroyOnBecomeInvisible: 1
 --- !u!212 &7716524381722543950
 SpriteRenderer:
   m_ObjectHideFlags: 0
