@@ -13,14 +13,24 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        Vector3 spawnPosition = new Vector3(m_Transform.position.x + offset.x * m_Transform.localScale.x,
+        /*Vector3 spawnPosition = new Vector3(m_Transform.position.x + offset.x * m_Transform.localScale.x,
                                             m_Transform.position.y + offset.y,
-                                            m_Transform.position.z + offset.z);
+                                            m_Transform.position.z + offset.z);*/
+        Vector2 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 v = new Vector3(worldMouse.x - m_Transform.position.x,
+                worldMouse.y - m_Transform.position.y, 0);
+
+        Debug.Log($"{v.normalized}  {v}");
+
+        Vector3 spawnPosition = m_Transform.position + v.normalized;
+
         GameObject newProjectile = Instantiate(projectileType, spawnPosition, Quaternion.identity) as GameObject;
-        Vector3 initialScale = newProjectile.transform.localScale;
+
+        newProjectile.GetComponent<Projectile>().m_Direction = v.normalized;
+        /*Vector3 initialScale = newProjectile.transform.localScale;
         newProjectile.transform.localScale = new Vector3(initialScale.x * m_Transform.localScale.x,
                                                          initialScale.y,
-                                                         initialScale.z);
+                                                         initialScale.z);*/
     }
 
     #endregion

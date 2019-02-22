@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 257200493}
   - component: {fileID: 257200495}
   - component: {fileID: 257200496}
+  - component: {fileID: 257200498}
   - component: {fileID: 257200494}
   - component: {fileID: 257200497}
   m_Layer: 0
@@ -167,7 +168,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &257200495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14db046dfb434e04f96d74e7f75d7af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactKey: 304
+  interactKey: 323
   jumpKey: 32
   acceleration: 0.5
   maxMoveSpeed: 6
@@ -203,7 +204,18 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   OnJumpKeyPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 257200498}
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &257200496
@@ -247,6 +259,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &257200498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257200492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad75b871cc3d2444946ce4988d11d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0.501
+  jumpForce: 500
+  maxJumps: 2
 --- !u!1 &350675531
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +287,7 @@ GameObject:
   - component: {fileID: 350675534}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
