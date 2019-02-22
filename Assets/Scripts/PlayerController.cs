@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public KeyCode interactKey;
     public KeyCode jumpKey;
+    public KeyCode crouchKey;
     public float acceleration;
     public float maxMoveSpeed;
     public float verticalDampener;
@@ -24,11 +25,13 @@ public class PlayerController : MonoBehaviour
 
     protected Transform m_Transform;
     protected Rigidbody2D m_Rigidbody2D;
+    protected PlatformEffector2D m_PlatformEffector2D;
 
     private void Start()
     {
         m_Transform = this.gameObject.transform;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        m_PlatformEffector2D = GetComponent<PlatformEffector2D>();
     }
 
     private void Update()
@@ -37,10 +40,23 @@ public class PlayerController : MonoBehaviour
         {
             OnInteractKeyPressed.Invoke(this);
         }
-
-        if (Input.GetKeyDown(jumpKey))
+        else if (Input.GetKey(crouchKey))
+        {
+            if (Input.GetKeyDown(jumpKey))
+            {
+                m_PlatformEffector2D.rotationalOffset = 0;
+            }
+        }
+        else if (Input.GetKeyDown(jumpKey))
         {
             OnJumpKeyPressed.Invoke(this);
+        }
+
+        
+
+        if (Input.GetKeyUp(crouchKey))
+        {
+            m_PlatformEffector2D.rotationalOffset = 180;
         }
 
         m_HorizontalAxis = Input.GetAxisRaw("Horizontal");

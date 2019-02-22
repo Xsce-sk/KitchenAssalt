@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
 
         //m_Direction = m_Transform.localScale.x;
         m_RigidBody2D.AddForce(m_Direction * speed * 2, ForceMode2D.Impulse);
+        Destroy(this.gameObject, 5f);
     }
 
     private void OnBecameInvisible()
