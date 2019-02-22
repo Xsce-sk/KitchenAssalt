@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 257200498}
   - component: {fileID: 257200494}
   - component: {fileID: 257200497}
+  - component: {fileID: 257200499}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,7 +166,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -183,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 323
   jumpKey: 32
+  crouchKey: 115
   acceleration: 0.5
   maxMoveSpeed: 6
   verticalDampener: 0.75
@@ -244,7 +246,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -274,7 +276,27 @@ MonoBehaviour:
   offset: 0.501
   jumpForce: 1000
   maxJumps: 2
+  remainingJumps: 0
   terminalVelocity: -15
+--- !u!251 &257200499
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257200492}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 180
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &350675531
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +515,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1360694358}
   - component: {fileID: 1360694357}
-  - component: {fileID: 1360694356}
   m_Layer: 0
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -501,21 +522,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1360694356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1360694355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa91a31bdfe68244ba931d0dec1c3c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteOffset: 0
-  staticObject: 0
-  showDebug: 0
 --- !u!212 &1360694357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -692,7 +698,7 @@ PlatformEffector2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077015704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
