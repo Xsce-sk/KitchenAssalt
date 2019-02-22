@@ -20,7 +20,7 @@ public class Shooter : MonoBehaviour
         Vector3 v = new Vector3(worldMouse.x - m_Transform.position.x,
                 worldMouse.y - m_Transform.position.y, 0);
 
-        Debug.Log($"{v.normalized}  {v}");
+        //Debug.Log($"{v.normalized}  {v}");
 
         Vector3 spawnPosition = m_Transform.position + v.normalized;
 
