@@ -13,12 +13,20 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        /*Vector3 spawnPosition = new Vector3(m_Transform.position.x + offset.x * m_Transform.localScale.x,
-                                            m_Transform.position.y + offset.y,
-                                            m_Transform.position.z + offset.z);*/
+        Vector3 spawnOffset = (m_Transform.right * offset.x) + (m_Transform.up * offset.y) + (m_Transform.forward * offset.z);
+        Vector3 spawnPosition = new Vector3(m_Transform.position.x + spawnOffset.x,
+                                            m_Transform.position.y + spawnOffset.y,
+                                            m_Transform.position.z + spawnOffset.z);
+
+        Instantiate(projectileType, spawnPosition, m_Transform.rotation);
+    }
+
+    /*
+    public void ShootTowardsMouse()
+    {
         Vector2 worldMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector3 dir = new Vector3(worldMouse.x - m_Transform.position.x,
-                worldMouse.y - m_Transform.position.y, 0);
+                                  worldMouse.y - m_Transform.position.y, 0);
 
         //Debug.Log($"{v.normalized}  {v}");
 
@@ -26,12 +34,9 @@ public class Shooter : MonoBehaviour
 
         GameObject newProjectile = Instantiate(projectileType, spawnPosition, Quaternion.identity) as GameObject;
 
-        newProjectile.GetComponent<Projectile>().m_Direction = dir.normalized;
-        /*Vector3 initialScale = newProjectile.transform.localScale;
-        newProjectile.transform.localScale = new Vector3(initialScale.x * m_Transform.localScale.x,
-                                                         initialScale.y,
-                                                         initialScale.z);*/
+        //newProjectile.GetComponent<Projectile>().m_Direction = dir.normalized;
     }
+    */
 
     #endregion
 

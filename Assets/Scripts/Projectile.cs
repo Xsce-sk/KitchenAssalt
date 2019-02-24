@@ -23,8 +23,9 @@ public class Projectile : MonoBehaviour
         m_Transform = this.gameObject.transform;
         m_RigidBody2D = GetComponent<Rigidbody2D>();
 
-        //m_Direction = m_Transform.localScale.x;
-        m_RigidBody2D.AddForce(m_Direction * speed * 2, ForceMode2D.Impulse);
+        // m_Direction = m_Transform.localScale.x;
+        m_RigidBody2D.AddForce(m_Transform.right * speed, ForceMode2D.Impulse);
+        print(m_Transform.right);
     }
 
     private void OnBecameInvisible()

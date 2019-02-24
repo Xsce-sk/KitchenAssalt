@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
         m_HorizontalAxis = Input.GetAxisRaw("Horizontal");
         m_MoveSpeed = CalculateMoveSpeed();
         Move();
-        UpdateDirection();
     }
 
     private float CalculateMoveSpeed()
@@ -75,16 +74,5 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         m_Rigidbody2D.velocity = new Vector2(m_HorizontalAxis * m_MoveSpeed, m_Rigidbody2D.velocity.y);
-    }
-
-    private void UpdateDirection()
-    {
-        if (m_HorizontalAxis != 0)
-        {
-            Vector3 currentScale = m_Transform.localScale;
-            m_Transform.localScale = new Vector3(m_HorizontalAxis,
-                                                 currentScale.y,
-                                                 currentScale.z);
-        }
     }
 }
