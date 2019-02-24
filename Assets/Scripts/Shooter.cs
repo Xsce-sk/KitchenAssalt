@@ -5,7 +5,10 @@ using UnityEngine;
 public class Shooter : MonoBehaviour
 {
     public GameObject projectileType;
+    public float cooldownTime;
     public Vector3 offset;
+
+    private bool m_CanShoot;
 
     protected Transform m_Transform;
 
@@ -13,12 +16,17 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        Vector3 spawnOffset = (m_Transform.right * offset.x) + (m_Transform.up * offset.y) + (m_Transform.forward * offset.z);
-        Vector3 spawnPosition = new Vector3(m_Transform.position.x + spawnOffset.x,
-                                            m_Transform.position.y + spawnOffset.y,
-                                            m_Transform.position.z + spawnOffset.z);
+        if (m_CanShoot)
+        {
+            Vector3 spawnOffset = (m_Transform.right * offset.x) + (m_Transform.up * offset.y) + (m_Transform.forward * offset.z);
+            Vector3 spawnPosition = new Vector3(m_Transform.position.x + spawnOffset.x,
+                                                m_Transform.position.y + spawnOffset.y,
+                                                m_Transform.position.z + spawnOffset.z);
 
-        Instantiate(projectileType, spawnPosition, m_Transform.rotation);
+            Instantiate(projectileType, spawnPosition, m_Transform.rotation);
+
+            StartCoroutine(Cooldown());
+        }
     }
 
     /*
@@ -43,5 +51,14 @@ public class Shooter : MonoBehaviour
     private void Start()
     {
         m_Transform = this.gameObject.transform;
+
+        m_CanShoot = true;
+    }
+
+    private IEnumerator Cooldown()
+    {
+        m_CanShoot = false;
+        yield return new WaitForSeconds(cooldownTime);
+        m_CanShoot = true;
     }
 }

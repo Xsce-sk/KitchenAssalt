@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private float m_MoveSpeed;
 
     public KeyPressEvent OnInteractKeyPressed;
+    public KeyPressEvent OnInteractKeyHeld;
     public KeyPressEvent OnJumpKeyPressed;
 
     protected Transform m_Transform;
@@ -52,6 +53,10 @@ public class PlayerController : MonoBehaviour
             OnJumpKeyPressed.Invoke(this);
         }
 
+        if (Input.GetKey(interactKey))
+        {
+            OnInteractKeyHeld.Invoke(this);
+        }
         
 
         if (Input.GetKeyUp(crouchKey))
