@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public KeyCode interactKey;
     public KeyCode jumpKey;
     public KeyCode crouchKey;
+    public KeyCode nextWeaponKey;
+    public KeyCode previousWeaponKey;
     public float acceleration;
     public float maxMoveSpeed;
     public float verticalDampener;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public KeyPressEvent OnInteractKeyPressed;
     public KeyPressEvent OnInteractKeyHeld;
     public KeyPressEvent OnJumpKeyPressed;
+    public KeyPressEvent OnNextWeaponKeyPressed;
+    public KeyPressEvent OnPreviousWeaponKeyPressed;
 
     protected Transform m_Transform;
     protected Rigidbody2D m_Rigidbody2D;
@@ -41,7 +45,12 @@ public class PlayerController : MonoBehaviour
         {
             OnInteractKeyPressed.Invoke(this);
         }
-        else if (Input.GetKey(crouchKey))
+        else if (Input.GetKey(interactKey))
+        {
+            OnInteractKeyHeld.Invoke(this);
+        }
+
+        if (Input.GetKey(crouchKey))
         {
             if (Input.GetKeyDown(jumpKey))
             {
@@ -53,11 +62,15 @@ public class PlayerController : MonoBehaviour
             OnJumpKeyPressed.Invoke(this);
         }
 
-        if (Input.GetKey(interactKey))
-        {
-            OnInteractKeyHeld.Invoke(this);
-        }
         
+        if(Input.GetKeyDown(nextWeaponKey))
+        {
+            OnNextWeaponKeyPressed.Invoke(this);
+        }
+        else if(Input.GetKeyDown(previousWeaponKey))
+        {
+            OnPreviousWeaponKeyPressed.Invoke(this);
+        }
 
         if (Input.GetKeyUp(crouchKey))
         {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7268494624985408141}
   - component: {fileID: 3702710933233763296}
   m_Layer: 0
-  m_Name: PlayerTestProjectile
+  m_Name: PepperProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7e7b223c7a6b2cd48b57f79134b9bcd2, type: 3}
-  m_Color: {r: 0.25943398, g: 0.627488, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

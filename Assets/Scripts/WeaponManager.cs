@@ -12,36 +12,37 @@ public class WeaponManager : MonoBehaviour
 	void Start()
 	{
 		currIndex = 0;
+        ChangeWeapon();
 	}
 
-	public void nextWeapon()
+	public void NextWeapon()
 	{
 		++currIndex;
 		if(currIndex == weapons.Count)
 			currIndex = 0;
-		changeWeapon();
+        ChangeWeapon();
 	}
 
-	public void previousWeapon()
+	public void PreviousWeapon()
 	{
-		++currIndex;
+		--currIndex;
 		if(currIndex < 0)
 			currIndex = weapons.Count - 1;
-		changeWeapon();
+        ChangeWeapon();
 	}
 
-	public void explicitWeapon(int weaponIndex)
+	public void ExplicitWeapon(int weaponIndex)
 	{
 		currIndex = weaponIndex;
-		changeWeapon();
+        ChangeWeapon();
 	}
 
-	public void shootWeapon()
+	public void ShootWeapon()
 	{
-		currShooter.shoot();
+		currShooter.Shoot();
 	}
 
-	private void changeWeapon()
+	private void ChangeWeapon()
 	{
 		if(currWeapon != null)
 			Destroy(currWeapon);
