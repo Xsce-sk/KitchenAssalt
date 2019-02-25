@@ -352,24 +352,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18408012, y: -0.061374307, z: -10}
+  m_LocalPosition: {x: -0.20428276, y: -0.061374307, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1083140604 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1357235227967046702, guid: 50074bef99ee4324f8cfc05b26486169,
-    type: 3}
-  m_PrefabInstance: {fileID: 1357235229031411154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49766d0e8c9ad534cac04a98328f4e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1933187387
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933187387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.18408012, y: -0.061374307, z: -10}
+  m_LocalPosition: {x: -0.20428276, y: -0.061374307, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2068166260}
@@ -590,41 +578,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1083140604}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Shoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: OnInteractKeyHeld.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1357235227967046702, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: cooldownTime
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50074bef99ee4324f8cfc05b26486169, type: 3}
