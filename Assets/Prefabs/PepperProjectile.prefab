@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7716524381722543949}
   - component: {fileID: 7716524381722543951}
   - component: {fileID: 7716524381722543950}
-  - component: {fileID: 6669146590941115981}
   - component: {fileID: 7268494624985408141}
+  - component: {fileID: 6669146590941115981}
   - component: {fileID: 3702710933233763296}
   m_Layer: 0
   m_Name: PepperProjectile
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c28a284e339d14eae0843cfad12262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 10
   destroyOnBecomeInvisible: 1
 --- !u!212 &7716524381722543950
 SpriteRenderer:
@@ -97,6 +97,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7268494624985408141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7716524381722543792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96353b0ba36f59549b7c21729d97c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  stuns: 1
+  stunTime: 0.3
+  destroyOnCollision: 1
+  OnHitTarget:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Damager+OnHitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!50 &6669146590941115981
 Rigidbody2D:
   serializedVersion: 4
@@ -118,25 +139,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7268494624985408141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7716524381722543792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96353b0ba36f59549b7c21729d97c9ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Damage: 1
-  m_Target: Enemy
-  OnHitTarget:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Damager+OnHitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!58 &3702710933233763296
 CircleCollider2D:
   m_ObjectHideFlags: 0

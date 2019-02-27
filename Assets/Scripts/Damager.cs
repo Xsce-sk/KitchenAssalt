@@ -6,33 +6,34 @@ using UnityEngine.Events;
 
 public class Damager : MonoBehaviour
 {
-    public int m_Damage = 1;
-    public string m_Target = "Enemy";
-
     [Serializable]
     public class OnHitEvent : UnityEvent<Damager>
     { }
 
+    public int damage;
+    public bool stuns;
+    public float stunTime;
+    public bool destroyOnCollision;
     public OnHitEvent OnHitTarget;
 
-    // Start is called before the first frame update
-    void Start()
+    void OnTriggerEnter2D (Collider2D collision)
     {
-        
-    }
+        Damageable target = collision.gameObject.GetComponent<Damageable>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OnTriggerEnter2D (Collider2D col)
-    {
-        if(col.gameObject.name.Contains(m_Target))
+        if (target != null)
         {
-            col.gameObject.GetComponent<Damageable>().TakeDamage(m_Damage);
-            //OnHitTarget.Invoke(this);
+            target.TakeDamage(damage);
+            OnHitTarget.Invoke(this);
+
+            if (stuns)
+            {
+                target.Stun(stunTime);
+            }
+
+            if (destroyOnCollision)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

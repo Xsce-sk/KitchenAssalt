@@ -11,7 +11,16 @@ public class EnemyMovement : MonoBehaviour
     private float moveMod;
     private bool changeDirection;
 
-    // Start is called before the first frame update
+    public void SetMoveSpeed(float value)
+    {
+        moveSpeed = value;
+    }
+
+    public float GetMoveSpeed()
+    {
+        return moveSpeed;
+    }
+
     void Start()
     {
         m_Rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
@@ -19,7 +28,6 @@ public class EnemyMovement : MonoBehaviour
         moveMod = -1;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (changeDirection)
@@ -33,7 +41,6 @@ public class EnemyMovement : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D col)
     {
-        Debug.Log("I Collided");
         if (changeOnCollision)
         {
             if(!col.gameObject.name.Contains("Floor"))
@@ -48,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (changeOnFloorEdge)
         {
-            if (col.gameObject.name == "Bounds")
+            if (col.gameObject.CompareTag("Bound"))
             {
                 changeDirection = true;
             }

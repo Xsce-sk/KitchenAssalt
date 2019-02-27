@@ -69,7 +69,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c3a024114ee9e514f8a78b791771af1e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.44891423, g: 0.6746029, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 1357235229051632831}
   - component: {fileID: 1357235229051632829}
   - component: {fileID: 1357235229051632800}
+  - component: {fileID: 3656336378529527948}
   - component: {fileID: 1357235229051632828}
   - component: {fileID: 1357235229051632803}
   - component: {fileID: 1357235229051632801}
@@ -195,6 +196,7 @@ MonoBehaviour:
   crouchKey: 115
   nextWeaponKey: 101
   previousWeaponKey: 113
+  resetKey: 0
   acceleration: 0.5
   maxMoveSpeed: 6
   verticalDampener: 0.75
@@ -278,6 +280,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  OnResetKeyPressed:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1357235229051632800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad75b871cc3d2444946ce4988d11d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 750
+  jumpForce: 900
   maxJumps: 2
   terminalVelocity: 15
   offset: {x: 0, y: 0}
@@ -298,6 +305,18 @@ MonoBehaviour:
   raycastLength: 1.1
   debug: 0
   m_RemainingJumps: 0
+--- !u!114 &3656336378529527948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357235229051632830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7893059cd8ae0f443b6b9679ee0e1541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1357235229051632828
 Rigidbody2D:
   serializedVersion: 4
@@ -332,7 +351,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.099999905}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -343,7 +362,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 1.8000002}
   m_EdgeRadius: 0
 --- !u!251 &1357235229051632801
 PlatformEffector2D:

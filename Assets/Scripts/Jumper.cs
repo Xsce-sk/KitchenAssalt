@@ -91,9 +91,8 @@ public class Jumper : MonoBehaviour
         
         foreach (RaycastHit2D hit in collisions)
         {
-            if (hit && hit.collider.CompareTag("Ground"))
+            if (hit && (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Floor")))
             {
-                print(hit.collider.gameObject.name);
                 m_RemainingJumps = maxJumps;
                 m_IsGrounded = true;
             }

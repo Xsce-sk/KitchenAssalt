@@ -4,23 +4,46 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    public int m_MaxHealth = 3;
-    public int m_CurrentHealth;
+    public int maxHealth = 3;
+    public EnemyMovement movementScript;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_CurrentHealth = m_MaxHealth;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(m_CurrentHealth);
-    }
-
+    private int m_CurrentHealth;
+    private bool m_IsStunned;
+    private float m_initialMoveSpeed;
+    
     public void TakeDamage(int damage)
     {
         m_CurrentHealth -= damage;
+        m_initialMoveSpeed = movementScript.GetMoveSpeed();
+
+        if (m_CurrentHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+    public void Stun(float duration)
+    {
+        if (!m_IsStunned)
+        {
+            StartCoroutine(TimedStun(duration));
+        }
+    }
+
+    private void Start()
+    {
+        m_CurrentHealth = maxHealth;
+    }
+
+    private IEnumerator TimedStun(float duration)
+    {
+        movementScript.SetMoveSpeed(0);
+        m_IsStunned = true;
+
+        yield return new WaitForSeconds(duration);
+
+        movementScript.SetMoveSpeed(3);
+        m_IsStunned = false;
+    }
+    
 }
