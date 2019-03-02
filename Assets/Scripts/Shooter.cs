@@ -7,6 +7,9 @@ public class Shooter : MonoBehaviour
     public GameObject projectileType;
     public float cooldownTime;
     public Vector3 offset;
+    public List<float> pepperOffset = new List<float>();
+    private int pepperOffsetIndex = 0;
+    private int lastIndex;
 
     private bool m_CanShoot;
 
@@ -18,12 +21,30 @@ public class Shooter : MonoBehaviour
     {
         if (m_CanShoot)
         {
+            if(projectileType.name.Contains("Pepper"))
+            {
+                offset.y = pepperOffset[pepperOffsetIndex];
+                lastIndex = pepperOffsetIndex;
+            }
+
             Vector3 spawnOffset = (m_Transform.right * offset.x) + (m_Transform.up * offset.y) + (m_Transform.forward * offset.z);
             Vector3 spawnPosition = new Vector3(m_Transform.position.x + spawnOffset.x,
                                                 m_Transform.position.y + spawnOffset.y,
                                                 m_Transform.position.z + spawnOffset.z);
 
             Instantiate(projectileType, spawnPosition, m_Transform.rotation);
+
+            if (projectileType.name.Contains("Pepper"))
+            {
+                /*pepperOffsetIndex++;
+                if (pepperOffsetIndex >= pepperOffset.Count)
+                {
+                    pepperOffsetIndex = 0;
+                }*/
+
+                if(pepperOffsetIndex == lastIndex)
+                    pepperOffsetIndex = Random.Range(0, pepperOffset.Count);
+            }
 
             StartCoroutine(Cooldown());
         }

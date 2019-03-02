@@ -94,5 +94,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileType: {fileID: 7716524381722543792, guid: 8ef6284d2bb2a6c42817c7d25836dfd2,
     type: 3}
-  cooldownTime: 0.5
+  cooldownTime: 0.01
   offset: {x: 1, y: 0, z: 0}
+  pepperOffset:
+  - 0.345
+  - 0.1725
+  - -0.1725
+  - -0.345

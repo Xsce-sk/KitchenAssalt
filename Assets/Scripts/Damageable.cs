@@ -10,6 +10,7 @@ public class Damageable : MonoBehaviour
     private int m_CurrentHealth;
     private bool m_IsStunned;
     private float m_initialMoveSpeed;
+    private GameObject m_MainCamera;
     
     public void TakeDamage(int damage)
     {
@@ -19,7 +20,10 @@ public class Damageable : MonoBehaviour
         if (m_CurrentHealth <= 0)
         {
             Destroy(this.gameObject);
+            m_MainCamera.GetComponent<CameraShake>().StartLargeShake();
         }
+        else
+            m_MainCamera.GetComponent<CameraShake>().StartShake();
     }
 
     public void Stun(float duration)
@@ -33,6 +37,7 @@ public class Damageable : MonoBehaviour
     private void Start()
     {
         m_CurrentHealth = maxHealth;
+        m_MainCamera = GameObject.Find("Main Camera");
     }
 
     private IEnumerator TimedStun(float duration)
