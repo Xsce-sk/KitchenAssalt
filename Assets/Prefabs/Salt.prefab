@@ -92,7 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49766d0e8c9ad534cac04a98328f4e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileType: {fileID: 7716524381722543792, guid: aafe7c5f6654545408ed00d9f054949d,
+  projectileType: {fileID: 7265574099566455708, guid: 578121ed2878ff642bdfe7b1bd8de9cf,
     type: 3}
   cooldownTime: 0.3
   offset: {x: 1, y: 0, z: 0}
+  pepperOffset: []
