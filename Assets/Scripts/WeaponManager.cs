@@ -8,6 +8,8 @@ public class WeaponManager : MonoBehaviour
 	private GameObject currWeapon;
 	private Shooter currShooter;
 	private int currIndex;
+    private bool m_CanChangeWeapon = true;
+    public float cooldownTime = 1;
 
 	void Start()
 	{
@@ -44,10 +46,21 @@ public class WeaponManager : MonoBehaviour
 
 	private void ChangeWeapon()
 	{
-		if(currWeapon != null)
-			Destroy(currWeapon);
-		currWeapon = Instantiate(weapons[currIndex], transform);
-		currShooter = currWeapon.GetComponent<Shooter>();
+        if (m_CanChangeWeapon)
+        {
+            if (currWeapon != null)
+                Destroy(currWeapon);
+            currWeapon = Instantiate(weapons[currIndex], transform);
+            currShooter = currWeapon.GetComponent<Shooter>();
+            StartCoroutine("Cooldown");
+        }
 	}
+
+    private IEnumerator Cooldown()
+    {
+        m_CanChangeWeapon = false;
+        yield return new WaitForSeconds(cooldownTime);
+        m_CanChangeWeapon = true;
+    }
 
 }
