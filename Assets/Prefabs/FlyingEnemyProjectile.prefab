@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5297909951038241343}
   - component: {fileID: 5297909951038241340}
   - component: {fileID: 5297909951038241341}
-  - component: {fileID: 5297909951038241336}
   - component: {fileID: 5297909951038241337}
+  - component: {fileID: 2727285871464793613}
+  - component: {fileID: 7451568129244553399}
   m_Layer: 0
   m_Name: FlyingEnemyProjectile
   m_TagString: Untagged
@@ -120,27 +121,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5297909951038241336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297909951038241330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96353b0ba36f59549b7c21729d97c9ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  stuns: 0
-  stunTime: 0
-  destroyOnCollision: 1
-  OnHitTarget:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Damager+OnHitEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &5297909951038241337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +135,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   destroyOnBecomeInvisible: 1
+--- !u!114 &2727285871464793613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297909951038241330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22745e01d02ff54d9857e47ce6e88af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  stunDuration: 0
+  destroyOnCollision: 0
+  tagIgnores:
+  - Enemy
+--- !u!114 &7451568129244553399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297909951038241330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e22745e01d02ff54d9857e47ce6e88af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  stunDuration: 0
+  destroyOnCollision: 0
+  tagIgnores:
+  - Enemy

@@ -1,8 +1,40 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+
+public class Damager : MonoBehaviour
+{
+    public int damage;
+    public float stunDuration;
+    public bool destroyOnCollision;
+    public List<string> tagIgnores = new List<string>(); // For things you don't want the projectile to interact with
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        IDamageable damageableComponent = other.GetComponent<IDamageable>();
+        if (damageableComponent != null && !tagIgnores.Contains(other.tag))
+        {
+            damageableComponent.LoseHealth(damage);
+
+            // Currently will only destroy if collides with something that can take damage
+            // If that needs to change, just need to move this into an if that checks !tagIgnores.Contains(other.tag) 
+            if (destroyOnCollision)
+            {
+                Destroy(this.gameObject);
+            }
+
+            if (stunDuration > 0)
+            {
+                damageableComponent.Stun(stunDuration);
+            }
+        }
+    }
+}
+
+#region Old Damager
+/*
+ 
+    Kept just in case we need things from it
 
 public class Damager : MonoBehaviour
 {
@@ -37,3 +69,5 @@ public class Damager : MonoBehaviour
         }
     }
 }
+*/
+#endregion

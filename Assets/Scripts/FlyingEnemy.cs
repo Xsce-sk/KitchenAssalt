@@ -16,7 +16,7 @@ public class FlyingEnemy : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(m_Transform.position.x, m_Transform.position.y - 1), Vector2.down, Mathf.Infinity);
-        Debug.Log(hit.collider.tag);
+        //Debug.Log(hit.collider.tag);
         if(hit && hit.collider.CompareTag("Player"))
         {
             shooter.Shoot();

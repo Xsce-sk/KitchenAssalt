@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 1357235229051632828}
   - component: {fileID: 1357235229051632803}
   - component: {fileID: 1357235229051632801}
-  - component: {fileID: 6422053174278959059}
+  - component: {fileID: 9129281995611186318}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -384,7 +384,7 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &6422053174278959059
+--- !u!114 &9129281995611186318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -393,8 +393,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357235229051632830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 011b8c5fe0530704f8a48a40fb9585ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 8173ffcf3969e754296d502794021cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  movementScript: {fileID: 0}
