@@ -29,6 +29,27 @@ public class Damager : MonoBehaviour
             }
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        IDamageable damageableComponent = other.collider.GetComponent<IDamageable>();
+        if (damageableComponent != null && !tagIgnores.Contains(other.collider.tag))
+        {
+            damageableComponent.LoseHealth(damage);
+
+            // Currently will only destroy if collides with something that can take damage
+            // If that needs to change, just need to move this into an if that checks !tagIgnores.Contains(other.tag) 
+            if (destroyOnCollision)
+            {
+                Destroy(this.gameObject);
+            }
+
+            if (stunDuration > 0)
+            {
+                damageableComponent.Stun(stunDuration);
+            }
+        }
+    }
 }
 
 #region Old Damager

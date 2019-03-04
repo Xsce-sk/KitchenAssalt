@@ -49,6 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 6
+  bloodParticle: {fileID: 2791233378440073299, guid: 2775654984ef7b94a8566ce7ed9f6d72,
+    type: 3}
 --- !u!114 &6889299656010238833
 MonoBehaviour:
   m_ObjectHideFlags: 0

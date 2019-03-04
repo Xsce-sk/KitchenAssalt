@@ -6,6 +6,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
 {
     public int maxHealth;
 
+    public GameObject bloodParticle;
+
     private int m_currentHealth;
 
     // Start is called before the first frame update
@@ -23,6 +25,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
     public void LoseHealth(int healthDelta)
     {
         m_currentHealth -= healthDelta;
+        GameObject particle = Instantiate(bloodParticle, transform.position, transform.rotation) as GameObject;
+        Destroy(particle, 1f);
 
         if (m_currentHealth <= 0)
         {
