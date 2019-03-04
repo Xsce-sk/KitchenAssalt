@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour, IDamageable
 {
@@ -40,6 +41,10 @@ public class PlayerScript : MonoBehaviour, IDamageable
             if (m_CurrentHealth > 0)
             {
                 StartCoroutine("Blink");
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
 
