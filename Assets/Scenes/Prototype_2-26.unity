@@ -1011,6 +1011,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!212 &268266898 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1357235227672093063, guid: 50074bef99ee4324f8cfc05b26486169,
+    type: 3}
+  m_PrefabInstance: {fileID: 1859755463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &274105145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2519,7 +2525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.204484, y: 7.938626, z: -10}
+  m_LocalPosition: {x: -10.204441, y: 7.938626, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1933187389}
@@ -7099,6 +7105,35 @@ PrefabInstance:
         type: 3}
       propertyPath: OnResetKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129281995611186318, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: sr
+      value: 
+      objectReference: {fileID: 268266898}
+    - target: {fileID: 9129281995611186318, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: opacity
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129281995611186318, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: blinkDuration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129281995611186318, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357235227672093063, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1318701882, guid: 50074bef99ee4324f8cfc05b26486169, type: 3}
+      propertyPath: cooldownTime
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50074bef99ee4324f8cfc05b26486169, type: 3}

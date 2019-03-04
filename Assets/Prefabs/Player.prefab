@@ -126,6 +126,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 85537877248720162, guid: 115bc78d72577914b99e8cd76a688b1d, type: 3}
   - {fileID: 85537877248720162, guid: f6cd88907736f174ea70831078ec304e, type: 3}
+  cooldownTime: 0.5
 --- !u!114 &1318701883
 MonoBehaviour:
   m_ObjectHideFlags: 0
