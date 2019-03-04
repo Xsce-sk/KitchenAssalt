@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FlyingEnemyTest.unity
     guid: 83dc239a6e2c50f4bb297f7c9cee25d3
+  - enabled: 1
+    path: Assets/Scenes/AceChrisSceneNoTouchy.unity
+    guid: 102ea79040f147b4eb93400248914b3f
   m_configObjects: {}
