@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour, IDamageable
 {
     public int maxHealth;
-
     public GameObject bloodParticle;
+    public GameObject remainsPrefab;
+    public float remainsDuration;
 
     private int m_currentHealth;
 
@@ -31,6 +32,11 @@ public class EnemyScript : MonoBehaviour, IDamageable
         if (m_currentHealth <= 0)
         {
             Destroy(this.gameObject);
+            if (remainsPrefab != null)
+            {
+                GameObject remains = Instantiate(remainsPrefab, this.transform.position, Quaternion.identity);
+                Destroy(remains, remainsDuration);
+            }
         }
     }
 

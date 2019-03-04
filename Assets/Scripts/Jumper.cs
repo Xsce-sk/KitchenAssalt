@@ -77,6 +77,12 @@ public class Jumper : MonoBehaviour
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Ground") && !m_IsGrounded)
+            GroundCheck();
+    }
+
     private void GroundCheck()
     {
         RaycastHit2D[] collisions = new RaycastHit2D[3];
