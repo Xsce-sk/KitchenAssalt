@@ -51,6 +51,11 @@ public class PlayerScript : MonoBehaviour, IDamageable
         // Do something when we die/get hit by something.
     }
 
+    public int CurrentHealth()
+    {
+        return m_CurrentHealth;
+    }
+
     public void Stun(float duration)
     {
         // For if we want to be able to stun the player.
