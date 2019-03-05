@@ -385,6 +385,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  sr: {fileID: 0}
+  sr: {fileID: 1357235227672093063}
   opacity: 0.5
   blinkDuration: 0.25
