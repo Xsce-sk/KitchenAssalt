@@ -157,6 +157,10 @@ public class PlayerController : MonoBehaviour
         {
             insideBlock = true;
         }
+        if (collider.CompareTag("Wall"))
+        {
+            m_PlatformEffector2D.surfaceArc = 180;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collider)
@@ -165,6 +169,10 @@ public class PlayerController : MonoBehaviour
         {
             insideBlock = false;
             AfterDrop();
+        }
+        if (collider.CompareTag("Wall"))
+        {
+            m_PlatformEffector2D.surfaceArc = 175;
         }
     }
 
