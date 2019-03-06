@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed;
     private float moveMod;
     private bool changeDirection;
+    private bool beenSeen;
 
     public void SetMoveSpeed(float value)
     {
@@ -26,17 +27,21 @@ public class EnemyMovement : MonoBehaviour
         m_Rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
         changeDirection = false;
         moveMod = -1;
+        beenSeen = false;
     }
 
     void Update()
     {
-        if (changeDirection)
+        if (beenSeen)
         {
-            moveMod *= -1;
-            changeDirection = false;
-        }
+            if (changeDirection)
+            {
+                moveMod *= -1;
+                changeDirection = false;
+            }
 
-        m_Rigidbody2D.velocity = new Vector2(moveSpeed * moveMod, m_Rigidbody2D.velocity.y);
+            m_Rigidbody2D.velocity = new Vector2(moveSpeed * moveMod, m_Rigidbody2D.velocity.y);
+        }
     }
 
     void OnCollisionEnter2D (Collision2D col)
@@ -60,5 +65,9 @@ public class EnemyMovement : MonoBehaviour
                 changeDirection = true;
             }
         }
+    }
+    private void OnBecameVisible()
+    {
+        beenSeen = true;
     }
 }
