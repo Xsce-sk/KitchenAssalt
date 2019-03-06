@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Prototype_2-26.unity
-    guid: 9f1a5bf0baff2a14896bbbf8f7f431b0
-  - enabled: 1
-    path: Assets/Scenes/FlyingEnemyTest.unity
-    guid: 83dc239a6e2c50f4bb297f7c9cee25d3
-  - enabled: 1
-    path: Assets/Scenes/AceChrisSceneNoTouchy.unity
-    guid: 102ea79040f147b4eb93400248914b3f
+    path: Assets/Scenes/Prototype_3-5.unity
+    guid: 21ebf306e70918d49846ea354016b779
   m_configObjects: {}
