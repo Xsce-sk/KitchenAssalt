@@ -7,13 +7,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
 {
     public int maxHealth;
 
-    private int m_CurrentHealth;
-
     public SpriteRenderer sr;
 
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
 
+    private int m_CurrentHealth;
     private Color startColor;
     private Color damagedColor;
     private bool isDamagable = true;

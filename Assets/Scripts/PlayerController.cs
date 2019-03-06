@@ -20,8 +20,12 @@ public class PlayerController : MonoBehaviour
     public float maxMoveSpeed;
     public float verticalDampener;
 
+    public AudioClip MoveClip;
+
     private float m_HorizontalAxis;
     private float m_MoveSpeed;
+    private PlayAudio m_PlayAudio;
+    private Jumper m_Jumper;
 
     public KeyPressEvent OnInteractKeyPressed;
     public KeyPressEvent OnInteractKeyHeld;
@@ -35,14 +39,18 @@ public class PlayerController : MonoBehaviour
     protected PlatformEffector2D m_PlatformEffector2D;
     protected bool insideBlock;
     protected bool crouching;
+    protected bool playingSound;
 
     private void Start()
     {
+        m_PlayAudio = this.GetComponent<PlayAudio>();
         m_Transform = this.gameObject.transform;
-        m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        m_PlatformEffector2D = GetComponent<PlatformEffector2D>();
+        m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
+        m_PlatformEffector2D = this.GetComponent<PlatformEffector2D>();
+        m_Jumper = this.GetComponent<Jumper>();
         insideBlock = false;
         crouching = false;
+        playingSound = false;
     }
 
     private void Update()
@@ -105,7 +113,12 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        
         m_Rigidbody2D.velocity = new Vector2(m_HorizontalAxis * m_MoveSpeed, m_Rigidbody2D.velocity.y);
+        if(m_Rigidbody2D.velocity.x != 0 && m_Jumper.IsGrounded() && !playingSound)
+        {
+            StartCoroutine(MoveSound());
+        }
     }
 
     private void Drop()
@@ -155,4 +168,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator MoveSound()
+    {
+        playingSound = true;
+        m_PlayAudio.PlayClip(MoveClip);
+        yield return new WaitForSeconds(0.3f);
+        playingSound = false;
+    }
 }
