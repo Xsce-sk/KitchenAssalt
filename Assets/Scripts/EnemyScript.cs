@@ -8,12 +8,14 @@ public class EnemyScript : MonoBehaviour, IDamageable
     public GameObject bloodParticle;
     public GameObject remainsPrefab;
     public float remainsDuration;
+    private KillUI killUI;
 
     private int m_currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
+        killUI = GameObject.Find("Kills").GetComponent<KillUI>();
         m_currentHealth = maxHealth;
     }
 
@@ -38,6 +40,11 @@ public class EnemyScript : MonoBehaviour, IDamageable
                 Destroy(remains, remainsDuration);
             }
         }
+    }
+
+    void OnDestroy()
+    {
+        killUI.IterateKillNum(1);
     }
 
     public void Stun(float duration)
