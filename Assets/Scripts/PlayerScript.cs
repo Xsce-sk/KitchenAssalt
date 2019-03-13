@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
+    public int blinkAmount = 10;
+    public GameObject bloodParticle;
 
     protected PlayAudio m_PlayAudio;
 
@@ -47,6 +49,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
             if (m_CurrentHealth > 0)
             {
                 StartCoroutine("Blink");
+                GameObject particle = Instantiate(bloodParticle, transform.position, transform.rotation) as GameObject;
+                Destroy(particle, 1f);
             }
             else
             {
@@ -69,10 +73,16 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     IEnumerator Blink()
     {
-        sr.color = damagedColor;
         isDamagable = false;
-        yield return new WaitForSeconds(blinkDuration);
-        sr.color = startColor;
+
+        for (int x = 0; x < blinkAmount; ++x)
+        {
+            sr.color = damagedColor;
+            yield return new WaitForSeconds(blinkDuration / blinkAmount);
+            sr.color = startColor;
+            yield return new WaitForSeconds(blinkDuration / blinkAmount);
+        }
+
         isDamagable = true;
     }
 }

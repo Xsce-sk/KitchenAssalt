@@ -404,6 +404,9 @@ MonoBehaviour:
   sr: {fileID: 1357235227672093063}
   opacity: 0.5
   blinkDuration: 0.25
+  blinkAmount: 10
+  bloodParticle: {fileID: 2610096667773498490, guid: dc42a0d397e59424fbd52d0b8c253c4f,
+    type: 3}
   HurtSound: {fileID: 0}
 --- !u!114 &5040712426805091129
 MonoBehaviour:
