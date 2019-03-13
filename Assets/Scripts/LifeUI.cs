@@ -16,6 +16,6 @@ public class LifeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmp.text = "Life: " + player.CurrentHealth();
+        tmp.text = "HP: " + player.CurrentHealth();
     }
 }
