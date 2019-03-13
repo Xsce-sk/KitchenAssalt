@@ -12,6 +12,7 @@ public class Shooter : MonoBehaviour
     private int lastIndex;
 
     private bool m_CanShoot;
+    private bool paused;
 
     protected Transform m_Transform;
     protected PlayAudio m_PlayAudio;
@@ -23,7 +24,7 @@ public class Shooter : MonoBehaviour
 
     public void Shoot()
     {
-        if (m_CanShoot)
+        if (m_CanShoot && !paused)
         {
             if(projectileType.name.Contains("Pepper"))
             {
@@ -83,6 +84,13 @@ public class Shooter : MonoBehaviour
         m_Transform = this.gameObject.transform;
         m_PlayAudio = this.GetComponent<PlayAudio>();
         m_CanShoot = true;
+        paused = false;
+        GameController.pauseEvent.AddListener(PauseListener);
+    }
+
+    void PauseListener()
+    {
+        paused = !paused;
     }
 
     private IEnumerator Cooldown()

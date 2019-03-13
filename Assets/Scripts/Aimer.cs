@@ -13,6 +13,7 @@ public class Aimer : MonoBehaviour
     private Vector3 m_Direction;
     private float m_Angle;
     private bool m_Enabled;
+    private bool paused;
 
     protected Transform m_Transform;
 
@@ -32,6 +33,8 @@ public class Aimer : MonoBehaviour
 
     private void Start()
     {
+        GameController.pauseEvent.AddListener(PauseListener);
+        paused = false;
         m_Transform = this.transform;
 
         m_MainCamera = Camera.main;
@@ -42,9 +45,14 @@ public class Aimer : MonoBehaviour
         }
     }
 
+    void PauseListener()
+    {
+        paused = !paused;
+    }
+
     private void Update()
     {
-        if (m_Enabled)
+        if (m_Enabled && !paused)
         {
             if (lookAtMouse)
             {

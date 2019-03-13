@@ -40,9 +40,12 @@ public class PlayerController : MonoBehaviour
     protected bool insideBlock;
     protected bool crouching;
     protected bool playingSound;
+    private bool paused;
 
     private void Start()
     {
+        paused = false;
+        GameController.pauseEvent.AddListener(PauseListener);
         m_PlayAudio = this.GetComponent<PlayAudio>();
         m_Transform = this.gameObject.transform;
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
@@ -53,55 +56,63 @@ public class PlayerController : MonoBehaviour
         playingSound = false;
     }
 
+    void PauseListener()
+    {
+        paused = !paused;
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(interactKey))
+        if (!paused)
         {
-            OnInteractKeyPressed.Invoke(this);
-        }
-        else if (Input.GetKey(interactKey))
-        {
-            OnInteractKeyHeld.Invoke(this);
-        }
-
-        if (Input.GetKey(crouchKey))
-        {
-            crouching = true;
-            if (Input.GetKeyDown(jumpKey))
+            if (Input.GetKeyDown(interactKey))
             {
-                Drop();
+                OnInteractKeyPressed.Invoke(this);
             }
-        }
-        else if (Input.GetKeyDown(jumpKey))
-        {
-            OnJumpKeyPressed.Invoke(this);
-        }
+            else if (Input.GetKey(interactKey))
+            {
+                OnInteractKeyHeld.Invoke(this);
+            }
 
-        
-        if(Input.GetKeyDown(nextWeaponKey))
-        {
-            OnNextWeaponKeyPressed.Invoke(this);
-        }
-        else if(Input.GetKeyDown(previousWeaponKey))
-        {
-            OnPreviousWeaponKeyPressed.Invoke(this);
-        }
+            if (Input.GetKey(crouchKey))
+            {
+                crouching = true;
+                if (Input.GetKeyDown(jumpKey))
+                {
+                    Drop();
+                }
+            }
+            else if (Input.GetKeyDown(jumpKey))
+            {
+                OnJumpKeyPressed.Invoke(this);
+            }
 
-        if (Input.GetKeyUp(crouchKey))
-        {
-            crouching = false;
-            AfterDrop();
+
+            if (Input.GetKeyDown(nextWeaponKey))
+            {
+                OnNextWeaponKeyPressed.Invoke(this);
+            }
+            else if (Input.GetKeyDown(previousWeaponKey))
+            {
+                OnPreviousWeaponKeyPressed.Invoke(this);
+            }
+
+            if (Input.GetKeyUp(crouchKey))
+            {
+                crouching = false;
+                AfterDrop();
+            }
+
+            m_HorizontalAxis = Input.GetAxisRaw("Horizontal");
+            m_MoveSpeed = CalculateMoveSpeed();
+            Move();
         }
 
         if (Input.GetKeyDown(resetKey))
         {
-            GameController.LoadSceneByIndex(0);
+            GameController.TogglePause();
             OnResetKeyPressed.Invoke(this);
         }
-
-        m_HorizontalAxis = Input.GetAxisRaw("Horizontal");
-        m_MoveSpeed = CalculateMoveSpeed();
-        Move();
     }
 
     private float CalculateMoveSpeed()

@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameController : MonoBehaviour
 {
+    public static UnityEvent pauseEvent = new UnityEvent();
+
     public static void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
@@ -20,8 +23,8 @@ public class GameController : MonoBehaviour
 
     public static void TogglePause()
     {
-        PlayerController playerInputs = GameObject.Find("Player").GetComponent<PlayerController>();
-
+        //PlayerController playerInputs = GameObject.Find("Player").GetComponent<PlayerController>();
+        pauseEvent.Invoke();
         if (Time.timeScale == 1)
         {
             Time.timeScale = 0;
@@ -31,7 +34,7 @@ public class GameController : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if(playerInputs != null)
-            playerInputs.enabled = !playerInputs.enabled;
+        //if(playerInputs != null)
+            //playerInputs.enabled = !playerInputs.enabled;
     }
 }
