@@ -10,13 +10,19 @@ public class EnemyScript : MonoBehaviour, IDamageable
     public float remainsDuration;
     private KillUI killUI;
 
+    protected PlayAudio m_PlayAudio;
+
+    [SerializeField]
+    private AudioClip HurtSound;
+
     private int m_currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
-        killUI = GameObject.Find("Kills").GetComponent<KillUI>();
+        //killUI = GameObject.Find("Kills").GetComponent<KillUI>();
         m_currentHealth = maxHealth;
+        m_PlayAudio = this.GetComponent<PlayAudio>();
     }
 
     // Update is called once per frame
@@ -30,6 +36,9 @@ public class EnemyScript : MonoBehaviour, IDamageable
         m_currentHealth -= healthDelta;
         GameObject particle = Instantiate(bloodParticle, transform.position, transform.rotation) as GameObject;
         Destroy(particle, 1f);
+
+        if(!m_PlayAudio.isPlaying())
+            m_PlayAudio.PlayClip(HurtSound);
 
         if (m_currentHealth <= 0)
         {

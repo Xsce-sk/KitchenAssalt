@@ -18,6 +18,11 @@ public class PlayAudio : MonoBehaviour
         m_Source.Play();
     }
 
+    public bool isPlaying()
+    {
+        return m_Source.isPlaying;
+    }
+
     public void StopClip()
     {
         m_Source.Stop();
