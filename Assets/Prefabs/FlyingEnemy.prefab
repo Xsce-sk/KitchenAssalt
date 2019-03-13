@@ -53,8 +53,9 @@ MonoBehaviour:
   maxHealth: 6
   bloodParticle: {fileID: 2791233378440073299, guid: 2775654984ef7b94a8566ce7ed9f6d72,
     type: 3}
-  remainsPrefab: {fileID: 0}
-  remainsDuration: 0
+  remainsPrefab: {fileID: 970260448625035697, guid: 9a13f06a6f5aa594bbd17d2baae94c3d,
+    type: 3}
+  remainsDuration: 20
 --- !u!114 &2595086398228453457
 MonoBehaviour:
   m_ObjectHideFlags: 0

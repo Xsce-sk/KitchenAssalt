@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundEnemyShooter : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public EnemyMovement m_Movement;
     public GameObject projectileType;
     private Transform m_Transform;
@@ -16,6 +16,7 @@ public class GroundEnemyShooter : MonoBehaviour
     void Start()
     {
         m_Transform = this.transform;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -30,15 +31,19 @@ public class GroundEnemyShooter : MonoBehaviour
 
     private bool IsCloseToPlayer()
     {
+        //Debug.Log(player.position);
         if (Vector2.Distance(player.position, m_Transform.position) <= range)
+        {
+            //Debug.Log(this.name + " is close to " + player.gameObject.name);
             return true;
+        }
 
         return false;
     }
 
     public void Shoot()
     {
-        Vector3 playerPos = player.position; ;
+        Vector3 playerPos = player.position;
         Vector3 dir = new Vector3(playerPos.x - m_Transform.position.x,
                                   playerPos.y - m_Transform.position.y, 0);
 

@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6889299656010238844}
   - component: {fileID: 6889299656010238845}
   - component: {fileID: 4097328369980958303}
-  - component: {fileID: 8220326736828631341}
+  - component: {fileID: 1735393085}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: EnemyWithShooting
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,8 +52,9 @@ MonoBehaviour:
   maxHealth: 6
   bloodParticle: {fileID: 2791233378440073299, guid: 2775654984ef7b94a8566ce7ed9f6d72,
     type: 3}
-  remainsPrefab: {fileID: 0}
-  remainsDuration: 0
+  remainsPrefab: {fileID: 970260448625035697, guid: 9a13f06a6f5aa594bbd17d2baae94c3d,
+    type: 3}
+  remainsDuration: 20
 --- !u!114 &6889299656010238833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ MonoBehaviour:
   destroyOnCollision: 0
   tagIgnores:
   - Enemy
---- !u!114 &8220326736828631341
+--- !u!114 &1735393085
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -193,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa789b5a7e93184da77ad4dd134b49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1357235229051632831, guid: 50074bef99ee4324f8cfc05b26486169, type: 3}
   m_Movement: {fileID: 6889299656010238833}
   projectileType: {fileID: 2527055129687485059, guid: 9c31b6e1fb08ff4408104c3e3b883382,
     type: 3}
