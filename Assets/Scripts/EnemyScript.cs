@@ -20,9 +20,9 @@ public class EnemyScript : MonoBehaviour, IDamageable
     // Start is called before the first frame update
     void Start()
     {
-        //killUI = GameObject.Find("Kills").GetComponent<KillUI>();
         m_currentHealth = maxHealth;
         m_PlayAudio = this.GetComponent<PlayAudio>();
+        killUI = GameObject.Find("Kills").GetComponent<KillUI>();
     }
 
     // Update is called once per frame
@@ -53,7 +53,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
 
     void OnDestroy()
     {
-        killUI.IterateKillNum(1);
+        if(killUI != null)
+            killUI.IterateKillNum(1);
     }
 
     public void Stun(float duration)
