@@ -12,6 +12,11 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
 
+    protected PlayAudio m_PlayAudio;
+
+    [SerializeField]
+    private AudioClip HurtSound;
+
     private int m_CurrentHealth;
     private Color startColor;
     private Color damagedColor;
@@ -21,6 +26,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     void Start()
     {
         m_CurrentHealth = maxHealth;
+        m_PlayAudio = this.transform.GetChild(2).GetComponent<PlayAudio>();
         startColor = sr.color;
         damagedColor = new Color(startColor.r, startColor.g, startColor.b, opacity);
     }
@@ -36,6 +42,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         if (isDamagable)
         {
             m_CurrentHealth -= healthDelta;
+            m_PlayAudio.PlayClip(HurtSound);
 
             if (m_CurrentHealth > 0)
             {

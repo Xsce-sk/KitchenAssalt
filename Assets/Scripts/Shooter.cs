@@ -14,6 +14,10 @@ public class Shooter : MonoBehaviour
     private bool m_CanShoot;
 
     protected Transform m_Transform;
+    protected PlayAudio m_PlayAudio;
+
+    [SerializeField]
+    private AudioClip ShootSound;
 
     #region Public Functions
 
@@ -33,6 +37,7 @@ public class Shooter : MonoBehaviour
                                                 m_Transform.position.z + spawnOffset.z);
 
             Instantiate(projectileType, spawnPosition, m_Transform.rotation);
+            m_PlayAudio.PlayClip(ShootSound);
 
             if (projectileType.name.Contains("Pepper"))
             {
@@ -72,7 +77,7 @@ public class Shooter : MonoBehaviour
     private void Start()
     {
         m_Transform = this.gameObject.transform;
-
+        m_PlayAudio = this.GetComponent<PlayAudio>();
         m_CanShoot = true;
     }
 

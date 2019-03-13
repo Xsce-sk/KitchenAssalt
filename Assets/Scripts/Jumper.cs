@@ -19,8 +19,12 @@ public class Jumper : MonoBehaviour
     private int m_RemainingJumps;
     private bool m_IsGrounded = false;
 
+    [SerializeField]
+    private AudioClip LandClip;
+
     protected Transform m_Transform;
     protected Rigidbody2D m_Rigidbody2D;
+    protected PlayAudio m_PlayAudio;
 
     #region Public Functions
 
@@ -45,6 +49,7 @@ public class Jumper : MonoBehaviour
     {
         m_Transform = this.gameObject.transform;
         m_Rigidbody2D = this.gameObject.GetComponent<Rigidbody2D>();
+        m_PlayAudio = this.GetComponent<PlayAudio>();
 
         m_RemainingJumps = maxJumps;
     }
@@ -101,6 +106,7 @@ public class Jumper : MonoBehaviour
             {
                 m_RemainingJumps = maxJumps;
                 m_IsGrounded = true;
+                m_PlayAudio.PlayClip(LandClip);
             }
         }
 
