@@ -37,7 +37,11 @@ public class Shooter : MonoBehaviour
                                                 m_Transform.position.z + spawnOffset.z);
 
             Instantiate(projectileType, spawnPosition, m_Transform.rotation);
-            m_PlayAudio.PlayClip(ShootSound);
+
+            if (ShootSound != null)
+            {
+                m_PlayAudio.PlayClip(ShootSound);
+            }
 
             if (projectileType.name.Contains("Pepper"))
             {
