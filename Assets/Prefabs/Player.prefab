@@ -407,7 +407,7 @@ MonoBehaviour:
   blinkAmount: 10
   bloodParticle: {fileID: 2610096667773498490, guid: dc42a0d397e59424fbd52d0b8c253c4f,
     type: 3}
-  HurtSound: {fileID: 8300000, guid: 7b93c8bb4c1a2ef4b93c1e4b707d7121, type: 3}
+  HurtSound: {fileID: 8300000, guid: 6f7ef8e6835e0f6478a473962b81f619, type: 3}
 --- !u!114 &5040712426805091129
 MonoBehaviour:
   m_ObjectHideFlags: 0
