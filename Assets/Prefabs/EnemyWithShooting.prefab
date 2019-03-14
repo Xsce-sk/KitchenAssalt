@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Movement: {fileID: 6889299656010238833}
   projectileType: {fileID: 2527055129687485059, guid: 9c31b6e1fb08ff4408104c3e3b883382,
     type: 3}
+  ShootClip: {fileID: 8300000, guid: c2b4c9b197d60f34c812c81e3f753411, type: 3}
   range: 5
   cooldownTime: 0.5
 --- !u!114 &3692934523972641614

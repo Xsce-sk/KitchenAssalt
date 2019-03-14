@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour, IDamageable
     private AudioClip HurtSound;
 
     private int m_currentHealth;
+    private GameObject remains;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +46,8 @@ public class EnemyScript : MonoBehaviour, IDamageable
             Destroy(this.gameObject);
             if (remainsPrefab != null)
             {
-                GameObject remains = Instantiate(remainsPrefab, this.transform.position, Quaternion.identity);
+                if(!remains)
+                    remains = Instantiate(remainsPrefab, this.transform.position, Quaternion.identity);
                 Destroy(remains, remainsDuration);
             }
         }

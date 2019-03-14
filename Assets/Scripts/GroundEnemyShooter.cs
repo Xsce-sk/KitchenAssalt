@@ -8,6 +8,11 @@ public class GroundEnemyShooter : MonoBehaviour
     public EnemyMovement m_Movement;
     public GameObject projectileType;
     private Transform m_Transform;
+    
+    private PlayAudio m_PlayAudio;
+    [SerializeField]
+    private AudioClip ShootClip;
+
     public float range = 5;
     private bool m_CanShoot = true;
     public float cooldownTime = 0.5f;
@@ -16,6 +21,7 @@ public class GroundEnemyShooter : MonoBehaviour
     void Start()
     {
         m_Transform = this.transform;
+        m_PlayAudio = this.GetComponent<PlayAudio>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -51,6 +57,7 @@ public class GroundEnemyShooter : MonoBehaviour
 
         Vector3 spawnPosition = m_Transform.position + dir.normalized;
 
+        m_PlayAudio.PlayClip(ShootClip);
         GameObject newProjectile = Instantiate(projectileType, spawnPosition, Quaternion.identity) as GameObject;
 
         newProjectile.GetComponent<EnemyProjectile>().m_Direction = dir.normalized;
