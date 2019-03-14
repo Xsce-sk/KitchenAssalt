@@ -205,7 +205,7 @@ MonoBehaviour:
   cooldownTime: 1
   offset: {x: 0, y: -1, z: 0}
   pepperOffset: []
-  ShootSound: {fileID: 8300000, guid: 6dd6d11e5a24246409140bdebca4d463, type: 3}
+  ShootSound: {fileID: 8300000, guid: c2b4c9b197d60f34c812c81e3f753411, type: 3}
 --- !u!114 &2595086398228453456
 MonoBehaviour:
   m_ObjectHideFlags: 0
