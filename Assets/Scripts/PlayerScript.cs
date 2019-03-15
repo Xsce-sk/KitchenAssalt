@@ -13,11 +13,14 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public float blinkDuration = 0.25f;
     public int blinkAmount = 10;
     public GameObject bloodParticle;
+    public Sprite DeathSprite;
 
     protected PlayAudio m_PlayAudio;
 
     [SerializeField]
     private AudioClip HurtSound;
+
+    protected Rigidbody2D m_Rigidbody2D;
 
     private int m_CurrentHealth;
     private Color startColor;
@@ -28,6 +31,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     void Start()
     {
         m_CurrentHealth = maxHealth;
+        m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_PlayAudio = this.transform.GetChild(2).GetComponent<PlayAudio>();
         startColor = sr.color;
         damagedColor = new Color(startColor.r, startColor.g, startColor.b, opacity);
@@ -54,11 +58,23 @@ public class PlayerScript : MonoBehaviour, IDamageable
             }
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                RagDoll();
+                StartCoroutine(Die());
             }
         }
 
         // Do something when we die/get hit by something.
+    }
+
+    public void RagDoll()
+    {
+        Destroy(this.GetComponent<PlayerController>());
+        Destroy(this.GetComponent<Jumper>());
+        Destroy(this.GetComponent<PlatformEffector2D>());
+        Destroy(this.transform.GetChild(1).gameObject);
+        sr.sprite = DeathSprite;
+        m_Rigidbody2D.AddForce(Vector2.up * 500);
+        this.transform.Rotate(0,0,90);
     }
 
     public int CurrentHealth()
@@ -69,6 +85,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public void Stun(float duration)
     {
         // For if we want to be able to stun the player.
+    }
+
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator Blink()
