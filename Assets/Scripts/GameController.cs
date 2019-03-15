@@ -13,6 +13,11 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(index);
     }
 
+    public static void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public static void TogglePanels(GameObject panel)
     {
         if (panel.activeInHierarchy)

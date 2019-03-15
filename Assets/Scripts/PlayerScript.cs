@@ -8,6 +8,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public int maxHealth;
 
     public SpriteRenderer sr;
+    public Canvas endGameCanvas;
 
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
@@ -62,7 +63,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             {
                 dead = true;
                 RagDoll();
-                StartCoroutine(Die());
+                // StartCoroutine(Die());
             }
         }
 
@@ -78,6 +79,8 @@ public class PlayerScript : MonoBehaviour, IDamageable
         sr.sprite = DeathSprite;
         m_Rigidbody2D.AddForce(Vector2.up * 500);
         this.transform.Rotate(0,0,90);
+
+        endGameCanvas.gameObject.SetActive(true);
     }
 
     public int CurrentHealth()

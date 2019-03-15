@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class killCount : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public KillUI killCt;
 
-    // Update is called once per frame
-    void Update()
+    private TextMeshProUGUI m_killCountText;
+
+    private void OnEnable()
     {
-        
+        m_killCountText = this.GetComponent<TextMeshProUGUI>();
+        m_killCountText.text = killCt.killNum.ToString();
     }
 }
