@@ -154,3 +154,5 @@ MonoBehaviour:
   - Floor
   - Ground
   - Projectile
+  - CameraBounds
+  - Wall

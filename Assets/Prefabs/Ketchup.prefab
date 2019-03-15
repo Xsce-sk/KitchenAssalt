@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 21396309528944078}
   m_Layer: 0
   m_Name: Ketchup
-  m_TagString: Ground
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10, y: 2.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3951647635342392674}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91,6 +92,114 @@ PolygonCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.58, y: 4.94}
+    newSize: {x: 2.58, y: 4.94}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 1.24, y: -1.54}
+      - {x: 1.23, y: -1.4599999}
+      - {x: 1.11, y: -1.26}
+      - {x: 1.13, y: -0.89}
+      - {x: 1.22, y: -0.04}
+      - {x: 1.26, y: 0.14}
+      - {x: 1.29, y: 0.26999998}
+      - {x: 1.29, y: 0.53}
+      - {x: 1.27, y: 0.59999996}
+      - {x: 1.17, y: 0.77}
+      - {x: 0.81, y: 1.13}
+      - {x: 0.69, y: 1.3399999}
+      - {x: 0.62, y: 1.5799999}
+      - {x: 0.65999997, y: 1.6899999}
+      - {x: 0.66999996, y: 1.79}
+      - {x: 0.59999996, y: 1.9}
+      - {x: 0.57, y: 2.29}
+      - {x: 0.48999998, y: 2.3799999}
+      - {x: 0.28, y: 2.46}
+      - {x: 0.21, y: 2.47}
+      - {x: -0.22999999, y: 2.47}
+      - {x: -0.41, y: 2.4299998}
+      - {x: -0.57, y: 2.32}
+      - {x: -0.59999996, y: 2.23}
+      - {x: -0.59, y: 1.88}
+      - {x: -0.65, y: 1.8499999}
+      - {x: -0.68, y: 1.68}
+      - {x: -0.62, y: 1.61}
+      - {x: -0.69, y: 1.3399999}
+      - {x: -0.85999995, y: 1.0699999}
+      - {x: -1.04, y: 0.89}
+      - {x: -1.18, y: 0.76}
+      - {x: -1.26, y: 0.63}
+      - {x: -1.27, y: 0.56}
+      - {x: -1.29, y: 0.51}
+      - {x: -1.29, y: 0.24}
+      - {x: -1.26, y: 0.08}
+      - {x: -1.22, y: -0.049999997}
+      - {x: -1.16, y: -0.69}
+      - {x: -1.11, y: -1.25}
+      - {x: -1.22, y: -1.43}
+      - {x: -1.26, y: -1.5999999}
+      - {x: -1.25, y: -1.9599999}
+      - {x: -1.22, y: -2.18}
+      - {x: -1.1899999, y: -2.27}
+      - {x: -1.12, y: -2.3899999}
+      - {x: -1.04, y: -2.45}
+      - {x: -1.01, y: -2.47}
+      - {x: 1.03, y: -2.47}
+      - {x: 1.05, y: -2.46}
+      - {x: 1.1899999, y: -2.29}
+      - {x: 1.24, y: -2.05}
+--- !u!1 &426189056848455230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3951647635342392674}
+  - component: {fileID: 4309088087991025087}
+  m_Layer: 0
+  m_Name: Ketchup
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3951647635342392674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426189056848455230}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 21396309528944076}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &4309088087991025087
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426189056848455230}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
