@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35b3906d552eed49974592b9b1de3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 10
   bloodParticle: {fileID: 2791233378440073299, guid: 2775654984ef7b94a8566ce7ed9f6d72,
     type: 3}
   remainsPrefab: {fileID: 970260448625035697, guid: 9a13f06a6f5aa594bbd17d2baae94c3d,
