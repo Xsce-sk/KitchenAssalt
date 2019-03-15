@@ -26,10 +26,12 @@ public class PlayerScript : MonoBehaviour, IDamageable
     private Color startColor;
     private Color damagedColor;
     private bool isDamagable = true;
+    private bool dead;
 
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         m_CurrentHealth = maxHealth;
         m_Rigidbody2D = this.GetComponent<Rigidbody2D>();
         m_PlayAudio = this.transform.GetChild(2).GetComponent<PlayAudio>();
@@ -45,7 +47,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public void LoseHealth(int healthDelta)
     {
-        if (isDamagable)
+        if (isDamagable && !dead)
         {
             m_CurrentHealth -= healthDelta;
             m_PlayAudio.PlayClip(HurtSound);
@@ -58,6 +60,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
             }
             else
             {
+                dead = true;
                 RagDoll();
                 StartCoroutine(Die());
             }
