@@ -707,8 +707,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 602955917579706745, guid: aafe7c5f6654545408ed00d9f054949d,
         type: 3}
+      propertyPath: tagIgnores.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 602955917579706745, guid: aafe7c5f6654545408ed00d9f054949d,
+        type: 3}
       propertyPath: damage
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 602955917579706745, guid: aafe7c5f6654545408ed00d9f054949d,
+        type: 3}
+      propertyPath: tagIgnores.Array.data[6]
+      value: Bound
+      objectReference: {fileID: 0}
+    - target: {fileID: 602955917579706745, guid: aafe7c5f6654545408ed00d9f054949d,
+        type: 3}
+      propertyPath: destroyOnCollision
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aafe7c5f6654545408ed00d9f054949d, type: 3}
