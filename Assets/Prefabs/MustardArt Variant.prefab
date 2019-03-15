@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MustardArt
       objectReference: {fileID: 0}
+    - target: {fileID: 2957028615611754076, guid: 0f2b5c25d646ab94fa5bd3ea04b5f41a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2957028615611754051, guid: 0f2b5c25d646ab94fa5bd3ea04b5f41a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,5 +107,7 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.6862745
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3817934938724456488, guid: 0f2b5c25d646ab94fa5bd3ea04b5f41a, type: 3}
+    - {fileID: 2957028615611754077, guid: 0f2b5c25d646ab94fa5bd3ea04b5f41a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0f2b5c25d646ab94fa5bd3ea04b5f41a, type: 3}

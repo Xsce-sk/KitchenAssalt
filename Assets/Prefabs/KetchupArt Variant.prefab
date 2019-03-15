@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: KetchupArt1
       objectReference: {fileID: 0}
+    - target: {fileID: 21396309528944065, guid: c3aa319d30623614fb286bfb9e1b305b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 21396309528944076, guid: c3aa319d30623614fb286bfb9e1b305b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -87,5 +92,12 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.6862745
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 426189056848455230, guid: c3aa319d30623614fb286bfb9e1b305b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 21396309528944078, guid: c3aa319d30623614fb286bfb9e1b305b, type: 3}
+    - {fileID: 4309088087991025087, guid: c3aa319d30623614fb286bfb9e1b305b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c3aa319d30623614fb286bfb9e1b305b, type: 3}

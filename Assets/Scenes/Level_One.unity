@@ -4402,7 +4402,7 @@ PrefabInstance:
     - target: {fileID: 2386104379882399641, guid: 4ac7b24ee1b2ea2469444784f3aa90cc,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2386104379882399645, guid: 4ac7b24ee1b2ea2469444784f3aa90cc,
         type: 3}
@@ -8007,6 +8007,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1357235229051632831, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357235229051632831, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
         type: 3}
       propertyPath: OnResetKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9510,11 +9520,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MustardArt
       objectReference: {fileID: 0}
-    - target: {fileID: 8807274622305118441, guid: 891201d532722eb48926d73434568665,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 8807274622305118454, guid: 891201d532722eb48926d73434568665,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9583,11 +9588,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KetchupArt1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6337017802772980932, guid: bdc7cecf3cd46d948a1bf79925b08178,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6337017802772980937, guid: bdc7cecf3cd46d948a1bf79925b08178,
         type: 3}
