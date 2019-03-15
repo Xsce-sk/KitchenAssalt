@@ -4348,7 +4348,7 @@ PrefabInstance:
     - target: {fileID: 3150954230616568175, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
         type: 3}
       propertyPath: m_RootOrder
-      value: 65
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 3150954230616568175, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
         type: 3}
@@ -4368,6 +4368,21 @@ PrefabInstance:
     - target: {fileID: 3150954230616568174, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
         type: 3}
       propertyPath: changeOnCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150954230616568172, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150954230616568172, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3150954230616568172, guid: 4cc5ad7797ac0f4439d45e99536a5e83,
+        type: 3}
+      propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4622,7 +4637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 66
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1055577097
 PrefabInstance:
