@@ -126,6 +126,12 @@ public class PlayerController : MonoBehaviour
     {
         
         m_Rigidbody2D.velocity = new Vector2(m_HorizontalAxis * m_MoveSpeed, m_Rigidbody2D.velocity.y);
+        
+        if(m_Rigidbody2D.velocity.x >= 0)
+            transform.GetChild(0).localScale = new Vector3(1,transform.localScale.y,0);
+        else
+            transform.GetChild(0).localScale = new Vector3(-1,transform.localScale.y,0);
+        
         if(m_Rigidbody2D.velocity.x != 0 && m_Jumper.IsGrounded() && !playingSound)
         {
             StartCoroutine(MoveSound());
