@@ -829,6 +829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 970260448625035698}
   - component: {fileID: 2706335378751671328}
+  - component: {fileID: 1313876942785558460}
   m_Layer: 8
   m_Name: EnemyRemains
   m_TagString: Untagged
@@ -952,3 +953,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1313876942785558460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970260448625035697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1124949d0ef3d3c4290b1d3caebbf74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
