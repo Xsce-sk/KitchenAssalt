@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 79729773}
   - component: {fileID: 79729771}
   - component: {fileID: 3826395262564053352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 423410791}
   - component: {fileID: 423410789}
   - component: {fileID: 6014811011970577797}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 897495875}
   - component: {fileID: 897495873}
   - component: {fileID: 190451376242419126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 970260447679065130}
   - component: {fileID: 970260447679065128}
   - component: {fileID: 7239978620698939656}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +575,7 @@ GameObject:
   - component: {fileID: 970260447880059004}
   - component: {fileID: 970260447880058994}
   - component: {fileID: 160304398033845146}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 970260448334181708}
   - component: {fileID: 970260448334181698}
   - component: {fileID: 3051414470220990284}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 970260448625035698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyRemains
   m_TagString: Untagged
   m_Icon: {fileID: 0}

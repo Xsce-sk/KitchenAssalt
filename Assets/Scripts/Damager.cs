@@ -12,9 +12,10 @@ public class Damager : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         IDamageable damageableComponent = other.GetComponent<IDamageable>();
-        if (damageableComponent != null && !tagIgnores.Contains(other.tag))
+        if (!tagIgnores.Contains(other.tag))
         {
-            damageableComponent.LoseHealth(damage);
+            if(damageableComponent != null)
+                damageableComponent.LoseHealth(damage);
 
             // Currently will only destroy if collides with something that can take damage
             // If that needs to change, just need to move this into an if that checks !tagIgnores.Contains(other.tag) 
@@ -23,7 +24,7 @@ public class Damager : MonoBehaviour
                 Destroy(this.gameObject);
             }
 
-            if (stunDuration > 0)
+            if (damageableComponent != null && stunDuration > 0)
             {
                 damageableComponent.Stun(stunDuration);
             }

@@ -14,6 +14,7 @@ public class Jumper : MonoBehaviour
     public float objectWidth;
     public float raycastLength;
     public bool debug;
+    public LayerMask mask;
 
     [SerializeField]
     private int m_RemainingJumps;
@@ -25,6 +26,8 @@ public class Jumper : MonoBehaviour
     protected Transform m_Transform;
     protected Rigidbody2D m_Rigidbody2D;
     protected PlayAudio m_PlayAudio;
+
+
 
     #region Public Functions
 
@@ -84,7 +87,7 @@ public class Jumper : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Ground") && !m_IsGrounded)
+        if ((collision.collider.CompareTag("Ground") || collision.collider.CompareTag("Floor")) && !m_IsGrounded)
             GroundCheck();
     }
 
@@ -96,9 +99,9 @@ public class Jumper : MonoBehaviour
         Vector2 leftOrigin = new Vector2(middleOrigin.x - (objectWidth / 2), middleOrigin.y);
         Vector2 rightOrigin = new Vector2(middleOrigin.x + (objectWidth / 2), middleOrigin.y);
 
-        collisions[0] = Physics2D.Raycast(middleOrigin, Vector2.down, raycastLength);
-        collisions[1] = Physics2D.Raycast(leftOrigin, Vector2.down, raycastLength);
-        collisions[2] = Physics2D.Raycast(rightOrigin, Vector2.down, raycastLength);
+        collisions[0] = Physics2D.Raycast(middleOrigin, Vector2.down, raycastLength, mask);
+        collisions[1] = Physics2D.Raycast(leftOrigin, Vector2.down, raycastLength, mask);
+        collisions[2] = Physics2D.Raycast(rightOrigin, Vector2.down, raycastLength, mask);
         
         foreach (RaycastHit2D hit in collisions)
         {

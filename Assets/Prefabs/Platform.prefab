@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2386104379882399645}
   - component: {fileID: 2386104379882399642}
   - component: {fileID: 2386104379882399643}
-  m_Layer: 0
-  m_Name: Platform (1)
+  m_Layer: 9
+  m_Name: Platform
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2386104380387620688}
   - component: {fileID: 2386104380387620691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Trigger
   m_TagString: Ground
   m_Icon: {fileID: 0}

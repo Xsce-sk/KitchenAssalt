@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1576742868599338991}
   m_Layer: 0
   m_Name: PepperProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,3 +151,6 @@ MonoBehaviour:
   destroyOnCollision: 1
   tagIgnores:
   - Player
+  - Floor
+  - Ground
+  - Projectile

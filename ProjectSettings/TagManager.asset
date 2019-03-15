@@ -10,6 +10,7 @@ TagManager:
   - Floor
   - Wall
   - CameraBounds
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Remains
+  - Ground
   - 
   - 
   - 
