@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2595086398228453456}
   - component: {fileID: 1397827831352366403}
   - component: {fileID: 4545076989231996498}
+  - component: {fileID: 8580337152633666959}
   m_Layer: 0
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -204,7 +205,7 @@ MonoBehaviour:
   cooldownTime: 1
   offset: {x: 0, y: -1, z: 0}
   pepperOffset: []
-  ShootSound: {fileID: 8300000, guid: 6dd6d11e5a24246409140bdebca4d463, type: 3}
+  ShootSound: {fileID: 8300000, guid: c2b4c9b197d60f34c812c81e3f753411, type: 3}
 --- !u!114 &2595086398228453456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +328,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &8580337152633666959
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2595086398228453480}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbf29b368b02c5c44a57209fe6536563, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8235143553996406009
 GameObject:
   m_ObjectHideFlags: 0
