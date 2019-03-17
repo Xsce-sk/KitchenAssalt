@@ -512,7 +512,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7725, y: 0.17400001}
   m_AnchorMax: {x: 0.81375, y: 0.22200002}
-  m_AnchoredPosition: {x: 35.09999, y: 132.9}
+  m_AnchoredPosition: {x: 35.099976, y: 132.9}
   m_SizeDelta: {x: 167, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &624670565
@@ -650,6 +650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mayo
+      objectReference: {fileID: 0}
+    - target: {fileID: 5190157190332608394, guid: 189c6a9f49e68ee459bd4764e7fa41f9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5190157190332608391, guid: 189c6a9f49e68ee459bd4764e7fa41f9,
         type: 3}
@@ -1394,11 +1399,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1357235227672093063, guid: 50074bef99ee4324f8cfc05b26486169,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1357235229051632831, guid: 50074bef99ee4324f8cfc05b26486169,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1452,6 +1452,11 @@ PrefabInstance:
     - target: {fileID: 1357235229051632831, guid: 50074bef99ee4324f8cfc05b26486169,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357235227672093063, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1357235227672093060, guid: 50074bef99ee4324f8cfc05b26486169,
@@ -1706,7 +1711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1417163, y: 0.73800004}
   m_AnchorMax: {x: 0.41869962, y: 0.85871696}
-  m_AnchoredPosition: {x: -61.00006, y: 21}
+  m_AnchoredPosition: {x: -61.00009, y: 21}
   m_SizeDelta: {x: 7.1799927, y: 0.45999908}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662235265
@@ -2315,6 +2320,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FadeImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789056635579411954, guid: 2d2b617721a23664b8e59947a6815e2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5789056635579411955, guid: 2d2b617721a23664b8e59947a6815e2b,
         type: 3}

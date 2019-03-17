@@ -29,7 +29,11 @@ public class MenuHitDetect : MonoBehaviour, IDamageable
         if (startButton)
             StartCoroutine(Fading());
         else if (quitButton)
+        {
+            Debug.Log("QUIT");
             Application.Quit();
+        }
+            
     }
 
     public void Stun(float duration)
