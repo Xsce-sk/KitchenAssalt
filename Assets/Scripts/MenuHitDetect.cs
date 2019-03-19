@@ -27,7 +27,7 @@ public class MenuHitDetect : MonoBehaviour, IDamageable
     {
         if (startButton)
             gc.LoadSceneByIndexPublic(sceneIndex);
-        else if (quitButton)
+        else if (quitButton && !gc.anim.GetBool(0))
         {
             Debug.Log("QUIT");
             Application.Quit();
