@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         pausePanel = GameObject.Find("Pause Panel");
+        GameController.TogglePanels(pausePanel);
         paused = false;
         GameController.pauseEvent.AddListener(PauseListener);
         m_PlayAudio = this.GetComponent<PlayAudio>();

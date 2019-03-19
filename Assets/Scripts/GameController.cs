@@ -8,14 +8,29 @@ public class GameController : MonoBehaviour
 {
     public static UnityEvent pauseEvent = new UnityEvent();
 
+    public void LoadSceneByIndexPublic(int index)
+    {
+        LoadSceneByIndex(index);
+    }
+
     public static void LoadSceneByIndex(int index)
     {
         SceneManager.LoadScene(index);
     }
 
+    public void QuitGamePublic()
+    {
+        QuitGame();
+    }
+
     public static void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void TogglePanelsPublic(GameObject panel)
+    {
+        TogglePanels(panel);
     }
 
     public static void TogglePanels(GameObject panel)
@@ -24,6 +39,11 @@ public class GameController : MonoBehaviour
             panel.SetActive(false);
         else
             panel.SetActive(true);
+    }
+
+    public void TogglePausePublic()
+    {
+        TogglePause();
     }
 
     public static void TogglePause()

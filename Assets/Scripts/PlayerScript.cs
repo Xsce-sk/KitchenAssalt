@@ -80,7 +80,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
         m_Rigidbody2D.AddForce(Vector2.up * 500);
         this.transform.Rotate(0,0,90);
 
-        endGameCanvas.gameObject.SetActive(true);
+        StartCoroutine(Die());
     }
 
     public int CurrentHealth()
@@ -95,8 +95,9 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     IEnumerator Die()
     {
-        yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        yield return new WaitForSeconds(1);
+        endGameCanvas.gameObject.SetActive(true);
+        GameController.TogglePause();
     }
 
     IEnumerator Blink()
