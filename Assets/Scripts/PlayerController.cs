@@ -41,9 +41,11 @@ public class PlayerController : MonoBehaviour
     protected bool crouching;
     protected bool playingSound;
     private bool paused;
+    private GameObject pausePanel;
 
     private void Start()
     {
+        pausePanel = GameObject.Find("Pause Panel");
         paused = false;
         GameController.pauseEvent.AddListener(PauseListener);
         m_PlayAudio = this.GetComponent<PlayAudio>();
@@ -111,6 +113,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(resetKey))
         {
             GameController.TogglePause();
+            GameController.TogglePanels(pausePanel);
             OnResetKeyPressed.Invoke(this);
         }
     }
