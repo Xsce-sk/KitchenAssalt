@@ -41,12 +41,13 @@ public class PlayerController : MonoBehaviour
     protected bool crouching;
     protected bool playingSound;
     private bool paused;
-    private GameObject pausePanel;
+    public GameObject pausePanel;
 
     private void Start()
     {
-        pausePanel = GameObject.Find("Pause Panel");
-        GameController.TogglePanels(pausePanel);
+        if(pausePanel)
+            GameController.TogglePanels(pausePanel);
+
         paused = false;
         GameController.pauseEvent.AddListener(PauseListener);
         m_PlayAudio = this.GetComponent<PlayAudio>();

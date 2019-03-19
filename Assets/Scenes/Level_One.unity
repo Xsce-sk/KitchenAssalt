@@ -4698,7 +4698,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -4932,6 +4932,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FadeImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789056635579411954, guid: 2d2b617721a23664b8e59947a6815e2b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5789056635579411955, guid: 2d2b617721a23664b8e59947a6815e2b,
         type: 3}
@@ -9326,6 +9331,11 @@ PrefabInstance:
       propertyPath: OnResetKeyPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3416624284916009071}
+    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: pausePanel
+      value: 
+      objectReference: {fileID: 1385953532}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50074bef99ee4324f8cfc05b26486169, type: 3}
 --- !u!1001 &1876669457

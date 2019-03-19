@@ -291,7 +291,7 @@ MonoBehaviour:
   startButton: 1
   blackImage: {fileID: 607319540}
   anim: {fileID: 607319542}
-  sceneIndex: 0
+  sceneIndex: 1
 --- !u!1001 &198935541
 PrefabInstance:
   m_ObjectHideFlags: 0
