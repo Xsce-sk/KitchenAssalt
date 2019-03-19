@@ -38,13 +38,25 @@ public class GroundEnemyShooter : MonoBehaviour
     private bool IsCloseToPlayer()
     {
         //Debug.Log(player.position);
-        if (Vector2.Distance(player.position, m_Transform.position) <= range)
+        if(isFacing())
         {
-            //Debug.Log(this.name + " is close to " + player.gameObject.name);
-            return true;
-        }
-
+	        if (Vector2.Distance(player.position, m_Transform.position) <= range)
+	        {
+	            //Debug.Log(this.name + " is close to " + player.gameObject.name);
+	            return true;
+	        }
+    	}
         return false;
+    }
+
+    private bool isFacing()
+    {
+    	Vector3 playerPos = player.position;
+    	if((playerPos.x > m_Transform.position.x && transform.localScale.x > 0) || (playerPos.x < m_Transform.position.x && transform.localScale.x < 0))
+    	{
+    		return false;
+    	}
+    	return true;
     }
 
     public void Shoot()
@@ -52,6 +64,10 @@ public class GroundEnemyShooter : MonoBehaviour
         Vector3 playerPos = player.position;
         Vector3 dir = new Vector3(playerPos.x - m_Transform.position.x,
                                   playerPos.y - m_Transform.position.y, 0);
+
+        if(!isFacing())
+        	return;
+
 
         //Debug.Log($"{v.normalized}  {v}");
 
