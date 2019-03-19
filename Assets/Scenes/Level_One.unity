@@ -491,7 +491,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &186872116
 PrefabInstance:
@@ -2386,7 +2386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0094404, y: 4.9860787, z: -10}
+  m_LocalPosition: {x: 0.7977791, y: 4.9860787, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1933187389}
@@ -5639,7 +5639,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1284955697
 GameObject:
@@ -5930,7 +5930,12 @@ PrefabInstance:
     - target: {fileID: 1206235362878556635, guid: e45f845d20866d24ea86f142286b47b5,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: PauseCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206235362878556635, guid: e45f845d20866d24ea86f142286b47b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1206235362878556646, guid: e45f845d20866d24ea86f142286b47b5,
         type: 3}
@@ -7310,7 +7315,7 @@ PrefabInstance:
     - target: {fileID: 2282625921558570961, guid: 186ca4cde1890b9469e3b741a2a93871,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 2282625921558570961, guid: 186ca4cde1890b9469e3b741a2a93871,
         type: 3}
@@ -9241,7 +9246,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933187387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.174416, y: -4.047453, z: 0}
+  m_LocalPosition: {x: -10.002411, y: -4.047453, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2068166260}
@@ -9502,7 +9507,7 @@ PrefabInstance:
     - target: {fileID: 8021369520140006319, guid: dd93e34c7caa0d848b2360fe9ccaaf3e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8021369520140006319, guid: dd93e34c7caa0d848b2360fe9ccaaf3e,
         type: 3}
