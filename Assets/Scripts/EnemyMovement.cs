@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
             m_Rigidbody2D.velocity = new Vector2(moveSpeed * moveMod, m_Rigidbody2D.velocity.y);
             if(m_Rigidbody2D.velocity.x > 0)
                 transform.localScale = new Vector3(-1,transform.localScale.y,0);
-            else
+            else if(m_Rigidbody2D.velocity.x < 0)
                 transform.localScale = new Vector3(1,transform.localScale.y,0);
         }
     }
