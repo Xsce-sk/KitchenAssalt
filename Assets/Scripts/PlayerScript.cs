@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
 
     public SpriteRenderer sr;
     public GameObject endGamePanel;
+    public GameObject lifePanel;
 
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
@@ -97,6 +98,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(1);
         GameController.TogglePanels(endGamePanel);
+        GameController.TogglePanels(lifePanel);
         GameController.TogglePause();
     }
 
