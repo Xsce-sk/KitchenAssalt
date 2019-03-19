@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     public int maxHealth;
 
     public SpriteRenderer sr;
-    public Canvas endGameCanvas;
+    public GameObject endGamePanel;
 
     public float opacity = 0.5f;
     public float blinkDuration = 0.25f;
@@ -96,7 +96,7 @@ public class PlayerScript : MonoBehaviour, IDamageable
     IEnumerator Die()
     {
         yield return new WaitForSeconds(1);
-        endGameCanvas.gameObject.SetActive(true);
+        GameController.TogglePanels(endGamePanel);
         GameController.TogglePause();
     }
 

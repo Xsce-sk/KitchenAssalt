@@ -45,9 +45,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if(pausePanel)
-            GameController.TogglePanels(pausePanel);
-
         paused = false;
         GameController.pauseEvent.AddListener(PauseListener);
         m_PlayAudio = this.GetComponent<PlayAudio>();
