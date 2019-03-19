@@ -115,7 +115,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(resetKey))
         {
             GameController.TogglePause();
-            GameController.TogglePanels(pausePanel);
+            if(pausePanel)
+                GameController.TogglePanels(pausePanel);
             OnResetKeyPressed.Invoke(this);
         }
     }

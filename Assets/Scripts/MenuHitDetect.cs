@@ -8,8 +8,7 @@ public class MenuHitDetect : MonoBehaviour, IDamageable
     public bool quitButton = false;
     public bool startButton = false;
 
-    public Image blackImage;
-    public Animator anim;
+    public GameController gc;
 
     public int sceneIndex = 0;
     // Start is called before the first frame update
@@ -27,7 +26,7 @@ public class MenuHitDetect : MonoBehaviour, IDamageable
     public void LoseHealth(int healthDelta)
     {
         if (startButton)
-            StartCoroutine(Fading());
+            gc.LoadSceneByIndexPublic(sceneIndex);
         else if (quitButton)
         {
             Debug.Log("QUIT");
@@ -39,12 +38,5 @@ public class MenuHitDetect : MonoBehaviour, IDamageable
     public void Stun(float duration)
     {
         //Do the dew...Mountian Dew
-    }
-
-    IEnumerator Fading()
-    {
-        anim.SetBool("Fading", true);
-        yield return new WaitUntil(() => blackImage.color.a == 1);
-        GameController.LoadSceneByIndex(sceneIndex);
     }
 }

@@ -3,14 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static UnityEvent pauseEvent = new UnityEvent();
+    public Image blackImage;
+    public Animator anim;
+    private int sceneIndex;
+
+    private void Awake()
+    {
+        GameObject fadeImage = GameObject.Find("FadeImage");
+        blackImage = fadeImage.GetComponent<Image>();
+        anim = fadeImage.GetComponent<Animator>();
+    }
 
     public void LoadSceneByIndexPublic(int index)
     {
-        LoadSceneByIndex(index);
+        sceneIndex = index;
+        StartCoroutine(Fading());
     }
 
     public static void LoadSceneByIndex(int index)
@@ -61,5 +73,12 @@ public class GameController : MonoBehaviour
 
         //if(playerInputs != null)
             //playerInputs.enabled = !playerInputs.enabled;
+    }
+
+    IEnumerator Fading()
+    {
+        anim.SetBool("Fading", true);
+        yield return new WaitUntil(() => blackImage.color.a == 1);
+        LoadSceneByIndex(sceneIndex);
     }
 }
