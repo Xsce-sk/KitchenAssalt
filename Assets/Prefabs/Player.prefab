@@ -301,6 +301,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: PlayerController+KeyPressEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  pausePanel: {fileID: 0}
 --- !u!114 &1357235229051632800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad75b871cc3d2444946ce4988d11d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 900
+  jumpForce: 1000
   maxJumps: 2
   terminalVelocity: 15
   offset: {x: 0, y: 0}
@@ -403,8 +404,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8173ffcf3969e754296d502794021cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 5
   sr: {fileID: 1357235227672093063}
+  endGamePanel: {fileID: 0}
   opacity: 0.5
   blinkDuration: 0.25
   blinkAmount: 10
