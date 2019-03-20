@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     protected bool playingSound;
     private bool paused;
     public GameObject pausePanel;
+    public GameObject endGamePanel;
 
     private void Start()
     {
@@ -111,10 +112,23 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(resetKey))
         {
-            GameController.TogglePause();
-            if(pausePanel)
-                GameController.TogglePanels(pausePanel);
-            OnResetKeyPressed.Invoke(this);
+            if (endGamePanel)
+            {
+                if (!endGamePanel.activeSelf)
+                {
+                    GameController.TogglePause();
+                    if (pausePanel)
+                        GameController.TogglePanels(pausePanel);
+                    OnResetKeyPressed.Invoke(this);
+                }
+            }
+            else
+            {
+                GameController.TogglePause();
+                if (pausePanel)
+                    GameController.TogglePanels(pausePanel);
+                OnResetKeyPressed.Invoke(this);
+            }
         }
     }
 
