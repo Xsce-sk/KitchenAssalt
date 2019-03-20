@@ -12364,6 +12364,11 @@ PrefabInstance:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 4035857843929734398}
+    - target: {fileID: 1357235229051632829, guid: 50074bef99ee4324f8cfc05b26486169,
+        type: 3}
+      propertyPath: endGamePanel
+      value: 
+      objectReference: {fileID: 4035857843482029147}
     - target: {fileID: 9129281995611186318, guid: 50074bef99ee4324f8cfc05b26486169,
         type: 3}
       propertyPath: endGameCanvas
